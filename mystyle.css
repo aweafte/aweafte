@@ -4,11 +4,23 @@
 }
 
 h1, h2, h3 {
+    line-height: 1.5;
+    color: #F9F9ED;
     font-family: 'Oswald', serif;
+    text-shadow: black 3px 3px 5px;
+}
+
+body {
+    background: linear-gradient(#587B7F, #131B23 100%);
+    margin: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 p {
-    line-height: 1.3
+    line-height: 1.3;
+    color: #F9F9ED;
 }
 
 label {
@@ -22,18 +34,29 @@ input {
 
 header, aside, section {
     padding: 5px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     margin: 2px;
 }
 
+header {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
 nav {
-    display: inline;
-    position: absolute;
-    top: 20px;
-    right: 25px;
+    position: static;
+    width: 100%;
+    text-align: center;
 }
 
 main {
+    animation-name: fadeIn;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
     min-height: 400px;
     display: flex;
     flex-direction: row;
@@ -43,6 +66,7 @@ aside {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    width: 20%;
 }
 
 section {
@@ -50,12 +74,18 @@ section {
 }
 
 footer {
+    animation-name: fadeIn;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
     text-align: center;
 }
 
 section.main-content {
     padding: 20px;
-    width: 90%
+    width: 60%;
+    margin-left: 10%;
 }
 
 div.content-block {
@@ -73,6 +103,10 @@ p#name {
     top: 20px;
 }
 
+p#footer {
+    color: #f9f9ed2c;
+}
+
 h1#header-title {
     margin: 0;
     font-size: 50px;
@@ -83,10 +117,15 @@ h1#header-title {
 
 p#header-title {
     margin: 0;
-    color: #777;
+    color: #f9f9ed6e;
     width: 100%;
     text-align: center;
     line-height: 3
+}
+
+video {
+    width: 100%;
+    box-shadow: black 3px 3px 5px;
 }
 
 div#header-title {
@@ -94,10 +133,23 @@ div#header-title {
     padding-bottom: 25px;
 }
 
-a.nav-link {
+.nav-link {
     padding: 0 2px 0 2px;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
+}
+
+.button {
+    background-color: black;
+    color: #F9F9ED;
+    width: 100%;
+    border-radius: 5px;
+    height: 50px;
+}
+
+.social-media-link {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 a.nav-link:hover {
@@ -106,7 +158,7 @@ a.nav-link:hover {
 
 a.basic {
     padding: 0 2px 0 2px;
-    color: rgb(0, 94, 194);
+    color: rgb(130, 190, 255);
     text-decoration: none;
 }
 
@@ -127,15 +179,53 @@ a.side-link:hover {
 
 .section-heading {
     margin: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+    }
+    100% {
+        opacity: 1;
+        position: none;
+    }
 }
 
 @media only screen and (orientation: portrait) {
     aside, section.main-content {
         width: 100%;
+        margin: 0;
     }
     main {
         flex-direction: column;
         padding-right: 4px;
+    }
+
+    video {
+        width: 100%;
     }
 
     header {
